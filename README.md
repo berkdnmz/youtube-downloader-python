@@ -1,81 +1,81 @@
-# 🎬 YouTube Video / MP3 Downloader (Python + yt-dlp)
+# 🎵 YouTube Video & Ses İndirici (Python + yt-dlp)
 
-Bu proje, YouTube videolarını hem video formatında hem de sadece ses (MP3) formatında indirmek için geliştirilmiştir.  
-Kullanıcıdan bağlantı alır, isteğe göre video veya sadece ses indirir.  
-Basit ama güçlü bir araçtır.
+Bu proje, kullanıcıdan alınan bir YouTube bağlantısını kullanarak **video** veya **ses** formatında indirme işlemi gerçekleştiren bir komut satırı uygulamasıdır. Kullanıcıya indirme öncesi **kalite seçimi** sunar (video için çözünürlük, ses için bitrate).  
+`yt-dlp` ve `ffmpeg` araçlarını kullanır.
 
 ## 🚀 Özellikler
 
-- 📥 YouTube'dan **video** veya **sadece ses** (MP3) indirme
-- ⚙️ `yt-dlp` ve `ffmpeg` entegrasyonu
-- 📁 İndirilenler otomatik olarak `Downloads` klasörüne kaydedilir
-- ✅ Hatalı bağlantılara karşı `try-except` kontrolü
-- 👨‍💻 Komut satırı üzerinden kullanıcı dostu arayüz
+- 📽️ YouTube videosu indirme (kalite seçilebilir: en iyi, 720p, 480p)
+- 🎧 YouTube ses dosyası (MP3) indirme (kalite seçilebilir: 192 kbps, 128 kbps)
+- 🗂️ Otomatik olarak `Downloads` klasörüne kaydeder
+- ❌ Hatalı linklerde kullanıcı dostu hata mesajı verir
+- ✅ `ffmpeg` ile dönüştürme işlemleri
 
 ## 🛠️ Gereksinimler
 
 - Python 3.7+
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-- [ffmpeg](https://ffmpeg.org/) (sisteme kurulu ve `PATH`'e ekli)
+- [ffmpeg](https://ffmpeg.org/download.html) (örn: `C:\ffmpeg\bin\ffmpeg.exe` gibi bir path verilmelidir)
 
-### Kurulum (Windows için örnek)
+### Kurulum
 
 ```bash
 pip install yt-dlp
 ```
 
-- ffmpeg'i [buradan](https://www.gyan.dev/ffmpeg/builds/) indirip `C:\ffmpeg` gibi bir klasöre çıkartın.
-- `ffmpeg.exe` yolunu `.py` dosyasındaki `FFMPEG_PATH` değişkenine belirtin:
-  ```python
-  FFMPEG_PATH = r'C:\ffmpeg\bin\ffmpeg.exe'
-  ```
+### ffmpeg kurulumu
 
-## 📦 Dosya Yapısı
+1. ffmpeg'i [buradan](https://ffmpeg.org/download.html) indirin.
+2. `ffmpeg.exe` yolunu `FFMPEG_PATH` sabitine uygun şekilde belirtin:
+   ```python
+   FFMPEG_PATH = r'C:\ffmpeg\bin\ffmpeg.exe'
+   ```
 
-```
-youtube_downloader/
-│
-├── downloader.py         # Ana Python scripti
-├── .gitignore            # Gereksiz dosyaları hariç tutar
-└── Downloads/            # İndirilen videolar ve mp3'ler
-```
+## 📦 Kullanım
 
-## ⚙️ Kullanım
+Terminalde çalıştırın:
 
 ```bash
-python downloader.py
+python main.py
 ```
 
-### Program akışı:
+### Adımlar:
 
-1. Kullanıcıdan bağlantı alınır
-2. Menüden video mu, ses mi indirileceği seçilir
-3. Dosya `Downloads/` klasörüne kaydedilir
+1. Video mu ses mi indireceğinizi seçin.
+2. Kalite seçimi yapın (örneğin 720p veya 192 kbps).
+3. YouTube linkini girin.
+4. Dosya `Downloads` klasörüne indirilir.
 
-## 💡 Örnek Ekran
+## 📁 Dosya Yapısı
 
 ```
-****************
-1.Video Download
-2.Audio Download
-****************
-
-Yapmak istediginiz islemi seciniz : 2
-İndirmek istediğiniz YouTube linki: https://www.youtube.com/watch?v=abc123
-
-Audio Downloaded.
+.
+├── Downloads/              # İndirilen dosyaların kaydedildiği klasör
+├── main.py                 # Uygulama ana Python dosyası
+├── .gitignore
+└── README.md
 ```
 
-## 🧠 Öğrenim Notları
+## 📌 Notlar
 
-Bu proje aşağıdaki konuları pekiştirir:
+- Video formatları ve kalite seçenekleri, `yt-dlp`’nin desteklediği formatlara göre ayarlanmıştır.
+- Ses dosyaları `.mp3` formatında indirilir.
 
-- Fonksiyonel Python yazımı
-- Kütüphane kullanımı (`yt_dlp`, `os`, `ffmpeg`)
-- Hata yönetimi (`try-except`)
-- Kullanıcıdan veri alma ve akış kontrolü
+## 🧠 Öğrenilenler
 
-## Proje Sahibi
+- `yt-dlp` kullanımı ve özel `format` kodlarıyla kalite belirleme
+- `ffmpeg` kullanarak ses dönüştürme
+- `try-except` ile hataları yönetme
+- `dict` ve kullanıcı menüleriyle Python CLI tasarımı
+
+## 🪪 Lisans
+
+Bu proje [Apache License 2.0](LICENSE) altında lisanslanmıştır.
+Kodları kullanabilir, değiştirebilir ve ticari projelerde bile kullanabilirsiniz ancak kaynak belirtmeniz gerekmektedir.
+Detaylar için LICENSE dosyasına bakabilirsiniz.
+
+
+## 👤 Proje Sahibi
 
 **Berk DÖNMEZ**
 
