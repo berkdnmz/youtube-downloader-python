@@ -70,9 +70,11 @@ python main.py
 
 ## 🪪 Lisans
 
-Bu proje [Apache License 2.0](LICENSE) altında lisanslanmıştır.
-Kodları kullanabilir, değiştirebilir ve ticari projelerde bile kullanabilirsiniz ancak kaynak belirtmeniz gerekmektedir.
-Detaylar için LICENSE dosyasına bakabilirsiniz.
+## Lisans
+
+Bu proje [MIT Lisansı](LICENSE) kapsamında açık kaynak olarak sunulmuştur.  
+Dilediğiniz gibi kullanabilir, değiştirebilir ve paylaşabilirsiniz — ancak orijinal geliştiriciyi belirtmeniz gerekir.
+
 
 
 ## 👤 Proje Sahibi

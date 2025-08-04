@@ -1,3 +1,6 @@
+# MIT License
+# Copyright (c) 2025 Necati Berk DÖNMEZ
+
 import sys #hatalı çıkışları yakalamak için
 
 from yt_dlp import YoutubeDL #Youtube'dan ses ve video indirmek için kullancağımız kütüphane
